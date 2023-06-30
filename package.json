@@ -1,0 +1,29 @@
+{
+  "name": "@sokoli/kutia-create-template",
+  "version": "0.1.5",
+  "description": "Frontend CLI for Kutia",
+  "bin": {
+    "kutia-start": "cli.js"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "inquirer": "^8.2.5"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Haris Sokoli",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harissokoli/create-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/harissokoli/create-template/issues"
+  },
+  "homepage": "https://github.com/harissokoli/create-template#readme"
+}
