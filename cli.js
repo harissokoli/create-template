@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-require('dotenv').config();
 const inquirer = require('inquirer');
 const { exec } = require('child_process');
 
@@ -41,7 +40,7 @@ function createProject() {
 				type: 'list',
 				name: 'store',
 				message: 'Select state management tool: ',
-				choices: ['Redux-Toolkit', 'Zustand', 'Context API'],
+				choices: ['Redux-Toolkit', 'Zustand', 'Context API', 'Context + ReactQuery'],
 				when: (answers) => answers.library === 'React (ts)'
 			},
 			{
@@ -65,23 +64,25 @@ function createProject() {
 
 			switch (library) {
 				case 'React (ts)':
-					repo += 'react';
+					repo = 'react';
 					break;
 			}
 
 			switch (store) {
 				case 'Redux-Toolkit':
-					branch += 'redux';
+					branch = 'redux';
 					break;
 				case 'Zustand':
-					branch += 'zustand';
+					branch = 'zustand';
 					break;
 				case 'Context API':
-					branch += 'context';
+					branch = 'context';
 					break;
+				case 'Context + ReactQuery':
+					branch = 'query'
 			}
 
-			const repositoryURL = `https://${process.env.GIT_TOKEN}@github.com/harissokoli/${repo}.git`;
+			const repositoryURL = `https://harissokoli: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@github.com/harissokoli/${repo}.git`;
 
 			const c = {
 				mkDir: `mkdir ${projectName}`,
